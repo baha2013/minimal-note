@@ -24,6 +24,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Auto-Find and Prepare Assets
+        shell: pwsh
+        run: |
+          $indexFile = Get-ChildItem -Recurse -Filter "index.html" -Exclude "node_modules", "target", "src-tauri" | Select-Object -First 1
+          if ($indexFile) {
+            $sourceDir = $indexFile.DirectoryName
+            Write-Host "Found index.html in: $sourceDir"
+            New-Item -ItemType Directory -Force -Path public
+            Copy-Item -Path "$sourceDir\*" -Destination public/ -Recurse -Force
+          } else {
+            Write-Error "CRITICAL: index.html file was not found in the repository!"
+            exit 1
+          }
+
       - name: Build Tauri EXE
         run: npx tauri build
 
