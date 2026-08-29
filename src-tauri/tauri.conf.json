@@ -1,23 +1,12 @@
 {
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "minimal-note",
+  "version": "1.0.0",
+  "identifier": "com.minimalnote.app",
   "build": {
-    "beforeDevCommand": "",
-    "beforeBuildCommand": "",
-    "devUrl": "../src",
-    "distDir": "../src"
+    "frontendDist": "../src"
   },
-  "package": {
-    "packageName": "minimal-note",
-    "version": "1.0.0"
-  },
-  "tauri": {
-    "allowlist": {
-      "all": true
-    },
-    "bundle": {
-      "active": true,
-      "targets": "all",
-      "identifier": "com.minimalnote.app"
-    },
+  "app": {
     "windows": [
       {
         "title": "المفكرة الذكية - Minimal Note",
@@ -29,5 +18,9 @@
         "center": true
       }
     ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all"
   }
 }
