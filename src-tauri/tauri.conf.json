@@ -2,9 +2,9 @@
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "minimal-note",
   "version": "1.0.0",
-  "identifier": "com.minimalnote.app",
+  "identifier": "com.minimalnote.notebook",
   "build": {
-    "frontendDist": "../src"
+    "frontendDist": ".."
   },
   "app": {
     "windows": [
