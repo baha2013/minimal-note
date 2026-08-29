@@ -1,0 +1,33 @@
+{
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "devUrl": "../src",
+    "distDir": "../src"
+  },
+  "package": {
+    "packageName": "minimal-note",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": true
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.minimalnote.app"
+    },
+    "windows": [
+      {
+        "title": "المفكرة الذكية - Minimal Note",
+        "width": 850,
+        "height": 650,
+        "resizable": true,
+        "decorations": false,
+        "transparent": true,
+        "center": true
+      }
+    ]
+  }
+}
