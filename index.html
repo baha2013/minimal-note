@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>المفكرة الذكية - Minimal Note</title>
+</head>
+<body class="dark-mode">
+  <div data-tauri-drag-region class="titlebar">
+    <div class="titlebar-left">
+      <span class="app-title">📝 المفكرة الذكية</span>
+      <button id="btn-theme" class="btn-icon">☀️</button>
+      <div class="export-dropdown">
+        <button id="btn-export-toggle" class="btn-text">📥 تصدير ▾</button>
+        <div id="export-menu" class="dropdown-content">
+          <button id="export-md">تصدير كـ Markdown (.md)</button>
+          <button id="export-txt">تصدير كـ النص الصريح (.txt)</button>
+        </div>
+      </div>
+    </div>
+    <div class="window-controls">
+      <button id="btn-minimize">—</button>
+      <button id="btn-maximize">❏</button>
+      <button id="btn-close" class="close-btn">✕</button>
+    </div>
+  </div>
+  <main class="editor-container">
+    <div id="editor" contenteditable="true" placeholder="ابدأ كتابة ملاحظاتك هنا..."></div>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>

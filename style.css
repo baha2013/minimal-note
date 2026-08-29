@@ -1,0 +1,53 @@
+:root {
+  --bg-color: #121212; --surface-color: #1e1e1e; --text-color: #e0e0e0;
+  --accent-color: #bb86fc; --border-color: #2c2c2c; --dropdown-bg: #252525;
+  --hover-color: rgba(255, 255, 255, 0.08);
+}
+body.light-mode {
+  --bg-color: #f8f9fa; --surface-color: #ffffff; --text-color: #212529;
+  --accent-color: #6200ee; --border-color: #e0e0e0; --dropdown-bg: #ffffff;
+  --hover-color: rgba(0, 0, 0, 0.05);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-color);
+  font-family: 'Segoe UI', system-ui, sans-serif; overflow: hidden;
+  border-radius: 8px; border: 1px solid var(--border-color); height: 100vh;
+}
+.titlebar {
+  height: 38px; background: var(--surface-color); user-select: none;
+  display: flex; justify-content: space-between; align-items: center; padding: 0 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+.titlebar-left { display: flex; align-items: center; gap: 12px; }
+.btn-icon, .btn-text {
+  background: transparent; border: none; color: var(--text-color);
+  cursor: pointer; padding: 4px 8px; border-radius: 4px;
+}
+.export-dropdown { position: relative; }
+.dropdown-content {
+  display: none; position: absolute; top: 100%; right: 0;
+  background-color: var(--dropdown-bg); min-width: 180px;
+  border: 1px solid var(--border-color); border-radius: 6px; z-index: 100;
+}
+.dropdown-content button {
+  color: var(--text-color); padding: 10px; width: 100%; text-align: right;
+  background: none; border: none; cursor: pointer;
+}
+.show { display: block; }
+.window-controls button {
+  background: transparent; border: none; color: var(--text-color);
+  width: 32px; height: 28px; cursor: pointer;
+}
+.window-controls .close-btn:hover { background: #e81123; color: white; }
+.editor-container { height: calc(100vh - 38px); padding: 25px 45px; overflow-y: auto; }
+#editor { outline: none; min-height: 100%; font-size: 16px; line-height: 1.8; }
+#editor ul { list-style-position: inside; padding-right: 22px; margin: 4px 0; }
+#editor ul[data-level="1"] { list-style-type: disc; }
+#editor ul[data-level="2"] { list-style-type: circle; }
+#editor ul[data-level="3"] { list-style-type: square; }
+#editor ul[data-level="4"] { list-style-type: dash; }
+.strikethrough { text-decoration: line-through; opacity: 0.5; }
+#editor li { cursor: grab; position: relative; margin-bottom: 4px; }
+#editor li.drag-over-top { border-top: 2px solid var(--accent-color); }
+#editor li.drag-over-bottom { border-bottom: 2px solid var(--accent-color); }
